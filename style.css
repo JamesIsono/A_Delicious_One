@@ -1,0 +1,598 @@
+/*  ヘッダー  */
+
+header {
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  background: rgb(78, 60, 60);
+  display: flex;
+  position: fixed;
+  box-shadow: 1px 1px 3px rgb(102, 102, 102);
+  z-index: 1;
+}
+
+/* ロゴは大枠に大きさを指定し、中身は100%展開 */
+.header-logo {
+  width: 50px;
+  height: 50px;
+  padding: 15px 15px;
+}
+
+.header-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.header-nav {
+  margin-left: auto;
+}
+.header-nav a {
+  transition: all .8s;
+}
+
+.header-nav a:hover{
+  color: rgba(255, 77, 77, 0.7);
+  border-bottom: 2px solid rgba(184, 245, 72, 0.7);
+  padding-bottom: 5px;
+}
+
+@media (max-width: 680px) {
+  .header-nav {
+    display: none;
+  }
+}
+
+/* flexはulに直接かける */
+.header-nav ul{
+  display: flex;
+  line-height: 80px;
+  margin-right: 80px;
+}
+
+.header-nav ul li {
+  padding-left: 40px;
+}
+
+/* decoration は、<a>に直接かける。 */
+.header-nav ul a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ハンバーガーメニュー */
+@media (min-width: 680px) {
+  .sp-menu {
+    display: none;
+    z-index: 2;
+  }
+}
+
+.sp-menu {
+  margin-left: auto;
+  padding-right: 16px;
+}
+
+.sp-menu #open {
+  font-size: 32px;
+  line-height: 64px;
+  cursor: pointer;
+}
+
+.sp-menu #open.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 20%;
+  background: rgba(204, 204, 204, 0.95);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity .6s;
+  box-shadow: 2px 2px 5px rgba(114, 114, 114, .8);
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay ul {  
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay li {  
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+
+
+
+
+
+  /* ハンバーガーメニュー アニメーション */
+    .left-to-right::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background: rgb(80, 0, 0); */
+      background: rgba(100, 0, 0, .7);
+
+      /* アニメーション用の設定 */
+      transform: scaleX(0);
+      /* transform-origin: right center;
+      transform-origin: left center; */
+      transition: transform 700ms;
+    }
+
+    /* .left-to-right:hover::after {
+      transform: scaleX(0.3);
+      transform-origin: left center;
+    } */
+    .left-to-right:hover::after {
+      transform: scaleX(0.7);
+      /* transform-origin: right center; */
+    }
+
+  /* アニメーション エンド */
+
+
+
+
+.overlay li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: rgba(100, 0, 0, .7);
+  font-weight: bold;
+
+  transition: transform .8s;
+  /* transition: border-bottom .8s;
+  transition: border-left .8s;
+  transition: border-right .4s; */
+}
+
+.overlay li a:hover{
+  transform: translate(1px, 2px);
+  font-weight: bold;
+  color: rgb(255, 0, 0);
+  /* border-bottom: solid 1px red;
+  border-left: solid 10px red;
+  border-right: solid 50px red; */
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+
+}
+
+.overlay.show li:nth-child(1) {
+  transition-delay: .1s;
+}
+.overlay.show li:nth-child(2) {
+  transition-delay: .2s;
+}
+.overlay.show li:nth-child(3) {
+  transition-delay: .3s;
+}
+
+/* ハンバーガーメニュー エンド */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* メインセクション */
+
+/* 縦横中央揃えは、親要素に対しdisplay: flex;と、align-items & justify-contents */
+.top-wrapper {
+  background-image: url(images/coffee1.jpg); 
+}
+
+.second-wrapper {
+  background-image: url(images/coffee2.jpg);
+}
+
+.third-wrapper {
+  background-image: url(images/coffee3.jpg);
+}
+
+@media screen and (max-width: 680px) {
+  .top-wrapper h1 {
+    font-size: 50px;
+  }
+
+  .second-wrapper h1 {
+    font-size: 40px;
+  }
+
+  .third-wrapper .strong{
+    font-size: 30px;
+  }
+
+  .third-wrapper .third-text {
+    font-size: 25px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* フィーチャーズ */
+
+.features {
+  display: flex;
+  flex-direction: column;
+  padding-top: 64px;
+  background: rgb(245, 245, 245);
+}
+
+.features .container {
+  margin: 0 32px;
+}
+
+.features .details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.features .details:nth-child(2){
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.features .info {
+  padding-top: 100px;
+  line-height: 100px;
+}
+
+@media screen and (max-width: 950px) {
+  .features .details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .features .details:nth-child(2){
+    display: flex;
+    flex-direction: column;
+  }
+
+  .features .info {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .features .details .info .more a{
+    text-decoration: none;
+    color: black;
+    border: solid 1px black;
+    border-radius: 3px;
+    padding: 15px 30px;
+    float:right;
+  }
+}
+
+.details .pic img{
+  border-radius: 10px;
+  box-shadow:
+    0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+    0 5px 6.1px rgba(0, 0, 0, 0.076),
+    0 10.1px 11.4px rgba(0, 0, 0, 0.086),
+    0 19.2px 19.8px rgba(0, 0, 0, 0.092),
+    0 38.4px 34.8px rgba(0, 0, 0, 0.1),
+    0 101px 74px rgba(0, 0, 0, 0.13);
+}
+
+.features .details .info .more a{
+  text-decoration: none;
+  color: black;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 15px 30px;
+
+  transition: all 0.3s;
+}
+
+.features .details .info .more a:hover{
+  opacity: 0.6;
+  color: rgb(196, 0, 0);
+  border: solid 5px red;
+  font-weight: bolder;
+  background: rgb(255, 157, 157);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* コンタクトフォーム */
+
+.fourth-wrapper {
+  background-image: url(images/coffee8.jpg);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+  padding: 20px 100px;
+  border: 2px solid rgba(201, 201, 201, 0.8);
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(158, 158, 158, 0.8);
+  background: rgba(201, 201, 201, 0.1);
+}
+
+input[type="text"] {
+  border: none;
+  outline: none;
+}
+/* border, outline は、初期設定の枠を操作する。 */
+
+.form-content {
+  padding: 5px 20px;
+  margin-top: 30px;
+}
+
+.form-content:hover {
+  color: dodgerBlue;
+  box-shadow: 0 0 10px 0 dodgerBlue;
+  transition: all .3s;
+}
+
+.form-content:focus {
+  color: black;
+  border-color: red;
+  box-shadow: 0 0 18px 0 red;
+  border: none;
+  outline: none;
+}
+
+/* :hover は「乗せた時」の動作。 :focus は「クリック時」の動作。 */
+.submit {
+  width: 50%;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+}
+
+.submit:hover {
+  color: yellowgreen;
+  box-shadow: 0 0 8px 0 yellowgreen;
+  font-weight: bold;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+/* .submit:focus{
+  color: red;
+  border-color: red;
+  box-shadow: 0 0 8px 0 red;
+} */
+
+@media screen and (max-width: 980px) {
+  .fourth-wrapper h1 {
+    font-size: 50px;
+  }
+
+  .contact-container {
+    margin-top: 50px;
+    padding: 20px 50px;
+    border: 2px solid rgba(201, 201, 201, 0.8);
+    box-shadow: 2px 2px 5px rgba(158, 158, 158, 0.8);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* フッター */
+
+footer {
+  padding: 64px 0;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer ul {
+  list-style: none;
+  display: flex;
+}
+
+.footer ul li {
+  padding-right: 30px;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: rgb(167, 167, 167);
+}
+
+.footer .grow-text{
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: rgb(167, 167, 167);
+
+  transition: all .8s;
+}
+
+.footer .grow-text:hover{
+  color: rgba(255, 77, 77, 0.7);
+  border-bottom: 2px solid rgba(184, 245, 72, 0.7);
+  padding-bottom: 5px;
+}
+

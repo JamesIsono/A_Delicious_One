@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>A Delicious One(Layout Practice 3)</title>
+    <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="common.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="swiper/swiper.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <a href="#"><img src="images/coffee logo.png"></a>
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#series">SERIES</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="sp-menu">
+        <span class="material-icons" id="open">menu</span>
+      </div>
+    </header>
+
+    <div class="overlay">
+      <span class="material-icons" id="close">close</span>
+      <nav>
+        <ul>
+          <li><a class="left-to-right cross" href="#about">ABOUT</a></li>
+          <li><a class="left-to-right cross2" href="#series">SERIES</a></li>
+          <li><a class="left-to-right cross3" href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <section class="top-wrapper img">
+        <h1>極上の、一杯。</h1>
+      </section>
+
+      <section class="second-wrapper img">
+        <h1>追求しすぎた、美味しさ。</h1>
+      </section>
+
+      <div id="about"></div>
+      <section class="third-wrapper img">
+        <h2><span class="strong">"A Delicious One"</span> は、<span class="marker"><br>簡単な心理テストを通して</span><br>
+        <span class="third-text">皆様に合ったコーヒー豆をお届けする、<br>
+          全く新しいサービスです。</span></h2>
+      </section>
+
+      <div id="series"></div>
+      <div class="features">
+        <div class="container">
+          <div class="details bdb">
+            <div class="pic">
+              <img src="images/psychologist.jpg">
+            </div>
+            <div class="info">
+              <h2>1, カウンセラーによる、<br>いくつかの質問</h2>
+              <div class="more">
+                <a href="#">View More</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="details bdb">
+            <div class="pic">
+              <img src="images/coffee6.jpg">
+            </div>
+            <div class="info">
+              <h2>2, その結果を鑑みて、<br>豆を選定</h2>
+              <div class="more">
+                <a href="#">View More</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="details bdb">
+            <div class="pic">
+              <img src="images/coffee7.jpg">
+            </div>
+            <div class="info">
+              <h2>3, あなただけの一杯を。</h2>
+              <div class="more">
+                <a href="#">View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact"></div>
+      <section class="fourth-wrapper img">
+        <h1><span class="strong marker">"A Delicious One"</span> makes your life<br>more Happier.</h1>
+        <form class="contact-container">
+          <h3>Contact</h3>
+          <input class="form-content" type="text" placeholder="お名前">
+          <input class="form-content" type="text" placeholder="メールアドレス">
+          <textarea class="form-content" placeholder="お問い合わせ内容"></textarea>
+          <input class="submit" type="submit" value="送信">
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-contents">
+          <ul>
+            <li><a href="#about">- <span class="grow-text">ABOUT</span></a></li>
+            <li><a href="#series">- <span class="grow-text">SERIES</span></a></li>
+            <li><a href="#contact">- <span class="grow-text">CONTACT</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+  
+</html>
